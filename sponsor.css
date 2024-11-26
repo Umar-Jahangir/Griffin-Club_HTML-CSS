@@ -1,0 +1,136 @@
+body { 
+    
+    background-color: #EAD8B1; 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+} 
+
+.logo { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    object-fit: cover;
+    width:150px;
+}
+
+header { 
+    background-color: #000B58; 
+    color: white; 
+    padding: 15px; 
+    text-align: center; 
+} 
+
+header nav ul { 
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+    text-align: center; 
+} 
+
+header nav ul li { 
+    display: inline; 
+    margin-right: 15px; 
+} 
+
+header nav ul li a { 
+    color: rgba(252, 252, 252, 0.955); 
+    text-decoration: none; 
+} 
+
+header nav ul li a:hover { 
+    text-decoration: underline; 
+} 
+
+.hero { 
+    background-color: #FFF4B7; 
+    padding: 50px 20px; 
+    text-align: center; 
+    color: rgb(228, 75, 55); 
+} 
+
+.sponsors-container {
+    margin-top: 2vw;
+    width: 100%;
+    overflow: hidden;
+    padding: 60px 0px;
+    background-color: #000000;
+    position: relative;
+  }
+  
+  /* Add mask effect for blurred edges */
+  .sponsors-container::before,
+  .sponsors-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 10%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  .sponsors-container::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  }
+  
+  .sponsors-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  }
+  
+  .slider {
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+    animation: marquee 15s linear infinite;
+    width: max-content; /* ensures container size adapts to its content */
+  }
+  
+  .slider img {
+    width: 400px;/* to increase the img size*/
+    height: 400px;
+    opacity: 0.8;
+    filter: grayscale(1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .slider img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    filter: grayscale(0);
+  }
+  
+  /* Continuous infinite scrolling without visible gaps */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* Duplicate the slider content */
+  .slider {
+    display: flex;
+    gap: 2vw;
+    animation: marquee 20s linear infinite;
+  }
+  
+  .slider-wrapper {
+    display: flex;
+    width: max-content;
+  }
+  
+  @media (max-width: 480px) {
+    .slider img {
+      filter: grayscale(0);
+      height: 60px;
+      width: 60px;
+    }
+  }
